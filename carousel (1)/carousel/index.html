@@ -1,0 +1,214 @@
+<!--
+    Swiper 预祝北京2022年冬奥会和冬残奥会成功举办
+    Swiper 为北京2022年冬奥会官网（https://www.beijing2022.cn/）提供轮播图技术支持
+    本轮播图版权所有 swiper中文网（https://www.swiper.com.cn/）
+-->
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>环形旋转木马视图切换</title>
+	<link rel="stylesheet" href="swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="carousel.css">
+	<script src="swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+	<div id="carousel">
+		<div class="swiper swiper-3d">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 中间 -->
+	<div id="carousel1">
+		<div class="swiper swiper-3d">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div id="carousel">
+		<div class="swiper swiper-3d  swiperthere">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+				<div class="swiper-slide"><img src="images/carousel01.png" />
+					<p>小谢和小咪</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script>
+		slideW = 100;//一张图300px, 每面四张角度22.5（PI/8），中心角度PI/16	             
+		radius = slideW * 0.5 / Math.sin(Math.PI / 16);//半径。圆心并不是视点中心，视点在1200px
+		carouselSwiper = new Swiper('#carousel .swiper', {
+			watchSlidesProgress: true,
+			// loop: true,
+			width: 500,
+			slidesPerView: 3,
+			spaceBetween: 25,
+			centeredSlides: false,
+			loop: true,
+			loopedSlides: 6,
+			grabCursor: true,
+			autoplay: true,
+			autoplay: {
+				delay: 1000,
+				stopOnLastSlide: false,//如果设置为true，当切换到最后一个slide时停止自动切换
+				disableOnInteraction: true
+			},
+			navigation: {
+
+			},
+			pagination: {
+				// el: '.swiper-pagination',
+				//clickable :true,
+			},
+			on: {
+				progress: function (swiper, progress) {
+					console.log(this.slides.length)
+					for (i = 0; i < this.slides.length; i++) {
+						var slide = this.slides.eq(i);
+						console.log(this.slides[i].progress)
+						var slideProgress = this.slides[i].progress;
+						translateX = (slideProgress + 1.5) * (slideW / 3 - Math.cos((slideProgress + 1.5) * 0.14 * Math.PI) * slideW * 1.1 / 6) + 'px';//调整图片间距，根据图片宽度改变数值实现自适应
+						rotateY = (slideProgress + 1.5) * 15;//图片角度
+
+
+						translateZ = (radius - Math.cos((slideProgress + 1.5) * 0.12 * Math.PI) * radius - 300) + 'px';//调整图片远近，刚好4个在画框内
+						slide.transform('translateX(' + translateX + ') translateZ(' + translateZ + ') rotateY(' + rotateY + 'deg)');
+					}
+				},
+				setTransition: function (swiper, transition) {
+					for (var i = 0; i < this.slides.length; i++) {
+						var slide = this.slides.eq(i)
+						slide.transition(transition);
+					}
+				}
+			}
+		})
+
+
+
+
+		carouselSwiper = new Swiper('#carousel1 .swiper', {
+			watchSlidesProgress: true,
+			// loop: true,
+			// width: 500,
+			slidesPerView: 6,
+			spaceBetween: 10,
+			centeredSlides: false,
+			loop: true,
+			loopedSlides: 6,
+			grabCursor: true,
+			autoplay: true,
+			autoplay: {
+				delay: 1000,
+				stopOnLastSlide: false,//如果设置为true，当切换到最后一个slide时停止自动切换
+				disableOnInteraction: true,
+				reverseDirection: true,
+			},
+			navigation: {
+
+			},
+			pagination: {
+				// el: '.swiper-pagination',
+				//clickable :true,
+			},
+
+		})
+
+	</script>
+</body>
+
+</html>
